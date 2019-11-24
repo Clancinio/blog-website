@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+
+
+/** Base Styles **/
+
+h1,
+h2 {
+    font-family: 'Calistoga', cursive;
+}
+
+
+/**** Navigation ******/
+
+nav {
+    margin: 0;
+    background-color: white;
+    border-bottom: 3px solid black;
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    height: 75px;
+}
+
+nav .menu-toggle {
+    display: none;
+}
+
+.logo-text {
+    margin: 0;
+}
+
+nav>ul {
+    display: flex;
+    list-style: none;
+    margin-left: auto;
+    align-self: flex-end;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
+}
+
+nav>ul li {
+    font-size: 1.2rem;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+nav>ul li a {
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 75px;
+    right: 0px;
+    transition: display 0.5s ease-in-out;
+    background-color: white;
+    width: 180px;
+    padding-left: 0;
+}
+
+.dropdown-menu li {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.dropdown-menu li a {
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: gray;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+nav ul i {
+    padding: 0 10px;
+}
+
+nav ul li:hover ul {
+    display: flex;
+    flex-direction: column;
+}
+
+nav ul li a:hover {
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+nav .log-out,
+nav .log-out:hover {
+    color: red;
+}
+
+
+/******* HERO **********/
+
+.hero {
+    width: 100%;
+    height: 90vh;
+    background: url("../images/hiker.jpg");
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+    background-blend-mode: overlay;
+}
