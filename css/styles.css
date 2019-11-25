@@ -11,8 +11,20 @@ body {
 /** Base Styles **/
 
 h1,
-h2 {
+h2,
+h3,
+h4 {
     font-family: 'Calistoga', cursive;
+    margin: 5px
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
 }
 
 
@@ -70,6 +82,7 @@ nav>ul li a {
     background-color: white;
     width: 180px;
     padding-left: 0;
+    z-index: 3;
 }
 
 .dropdown-menu li {
@@ -127,6 +140,74 @@ nav .log-out:hover {
     background-size: cover;
     /* Resize the background image to cover the entire container */
     background-blend-mode: overlay;
+}
+
+
+/***** Page Wrapper *******/
+
+.wrapper a:hover {
+    color: darkgray;
+}
+
+
+/***** CAROUSEL ********/
+
+.carousel {
+    position: relative;
+}
+
+.carousel .carousel-title {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.carousel .next {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    font-size: 2.2rem;
+    cursor: pointer;
+    color: black;
+}
+
+.carousel .prev {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    font-size: 2.2rem;
+    cursor: pointer;
+    color: black;
+}
+
+.carousel .post-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 84%;
+    height: 350px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+.carousel .post-wrapper .post {
+    background-color: lightgrey;
+    display: inline-block;
+    height: 350px;
+    margin: 0 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 1rem 1rem 1rem -1rem darkgray;
+}
+
+.carousel .post-wrapper .post .post-info {
+    height: 130px;
+    padding: 0px 5px;
+}
+
+.carousel .post-wrapper .post .post-image {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 230px
 }
 
 
