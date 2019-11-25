@@ -31,6 +31,7 @@ nav {
 
 nav .menu-toggle {
     display: none;
+    font-size: 25px;
 }
 
 .logo-text {
@@ -126,4 +127,49 @@ nav .log-out:hover {
     background-size: cover;
     /* Resize the background image to cover the entire container */
     background-blend-mode: overlay;
+}
+
+
+/***** MEDIA QUERIES *********/
+
+@media only screen and (max-width: 864px) {
+    nav {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: auto;
+    }
+    .logo-text {
+        margin: 20px 0;
+    }
+    nav ul {
+        width: 100%;
+        padding: 0;
+        flex-direction: column;
+        margin: 10px 0 0;
+        max-height: 0px;
+        overflow: hidden;
+    }
+    nav ul li a {
+        padding: 20px;
+    }
+    .dropdown-menu {
+        position: static;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+    .dropdown-menu li {
+        padding-left: 30px;
+    }
+    nav ul li:last-of-type {
+        display: flex;
+        flex-direction: column;
+    }
+    nav .menu-toggle {
+        display: block;
+    }
+    .showing {
+        max-height: 500px;
+    }
 }
