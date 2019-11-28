@@ -33,9 +33,9 @@ img {
 }
 
 .btn {
-    margin: 20px;
     background: black;
     color: white;
+    padding: 10px;
     border-radius: 5px;
 }
 
@@ -273,7 +273,12 @@ nav .log-out:hover {
 }
 
 .post-preview p {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+}
+
+.post-preview .post-btn-container {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .content .side-bar {
