@@ -10,12 +10,17 @@ body {
 
 /** Base Styles **/
 
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 h1,
 h2,
 h3,
 h4 {
     font-family: 'Calistoga', cursive;
-    margin: 5px
+    margin: 10px 0
 }
 
 a {
@@ -25,6 +30,18 @@ a {
 
 img {
     max-width: 100%;
+}
+
+.btn {
+    margin: 20px;
+    background: black;
+    color: white;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    color: white;
+    background: rgb(54, 54, 54)
 }
 
 
@@ -183,7 +200,7 @@ nav .log-out:hover {
     display: flex;
     flex-direction: column;
     width: 84%;
-    height: 350px;
+    height: 100%;
     margin: 0 auto;
     overflow: hidden;
     padding: 10px 0;
@@ -192,7 +209,7 @@ nav .log-out:hover {
 .carousel .post-wrapper .post {
     background-color: lightgrey;
     display: inline-block;
-    height: 350px;
+    height: 100%;
     margin: 0 10px;
     background-color: white;
     border-radius: 5px;
@@ -208,6 +225,59 @@ nav .log-out:hover {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     height: 230px
+}
+
+.carousel .post-wrapper .post i {
+    margin: 0 5px;
+}
+
+
+/***** CONTENT *********/
+
+.content {
+    width: 90%;
+    margin: 30px auto 30px;
+    display: flex;
+}
+
+.content .recent-posts {
+    width: 70%;
+    height: 100%;
+}
+
+.content .recent-posts-title,
+.content .side-bar-title {
+    margin: 20px;
+}
+
+.content .post {
+    background-color: lightgrey;
+    display: flex;
+    width: 95%;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 1rem 1rem 1rem -1rem darkgray;
+}
+
+.recent-posts .post-image {
+    width: 40%;
+    height: 100%;
+    margin: autp 0;
+}
+
+.post-preview {
+    padding: 10px;
+    width: 60%;
+    height: 100%;
+}
+
+.post-preview p {
+    margin-bottom: 50px;
+}
+
+.content .side-bar {
+    width: 30%;
 }
 
 
