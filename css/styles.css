@@ -329,6 +329,58 @@ nav .log-out:hover {
 }
 
 
+/***********************************
+            FOOTER
+***********************************/
+
+footer {
+    background-color: #303036;
+    color: #d3d3d3;
+}
+
+footer .footer-content {
+    display: flex;
+}
+
+footer .footer-content .footer-section {
+    flex: 1;
+    padding: 25px;
+}
+
+footer .footer-content h1,
+footer .footer-content h2 {
+    color: white;
+}
+
+footer .footer-content .about .contact span {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+footer .footer-content .about .social a {
+    font-size: 2rem;
+    margin-right: 20px;
+    margin-top: 20px;
+    transition: all .3s;
+}
+
+footer .footer-content .about .social a:hover {
+    color: white;
+    transition: all .3s;
+}
+
+footer .footer-bottom {
+    background-color: #343a40;
+    text-align: center;
+}
+
+footer .footer-bottom p {
+    margin: 0;
+    padding: 20px;
+}
+
+
 /***** MEDIA QUERIES *********/
 
 @media only screen and (max-width: 864px) {
