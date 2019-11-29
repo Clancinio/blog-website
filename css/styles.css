@@ -272,9 +272,21 @@ nav .log-out:hover {
     display: flex;
 }
 
-.content .recent-posts {
+.content .recent-posts,
+.main-content {
     width: 70%;
     height: 100%;
+}
+
+.content .main-content.single {
+    background: white;
+    padding: 20px 50px;
+    border-radius: 5px;
+}
+
+.content .main-content.single .post-title {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .content .recent-posts-title,
@@ -290,6 +302,11 @@ nav .log-out:hover {
     background-color: white;
     border-radius: 5px;
     box-shadow: 1rem 1rem 1rem -1rem darkgray;
+}
+
+.content .popular .post {
+    display: flex;
+    flex-direction: column;
 }
 
 .recent-posts .post-image {
@@ -322,6 +339,11 @@ nav .log-out:hover {
             Side Bar
 ***********************************/
 
+.content .side-bar.single {
+    padding: 0 10px;
+    margin-top: 0;
+}
+
 .content .side-bar .section {
     background-color: white;
     padding: 20px;
@@ -331,6 +353,10 @@ nav .log-out:hover {
 
 .content .side-bar .section.search {
     margin-top: 75px;
+}
+
+.content .side-bar .section.search.single {
+    margin-top: 0;
 }
 
 .content .side-bar .section.topics ul {
