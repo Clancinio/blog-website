@@ -175,6 +175,24 @@ nav .log-out:hover {
     background-size: cover;
     /* Resize the background image to cover the entire container */
     background-blend-mode: overlay;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+}
+
+.hero .hero-blurb {
+    padding: 50px;
+    background-color: rgba(37, 37, 37, 0.8);
+    width: 50%;
+}
+
+.hero-blurb h1 {
+    font-size: 4rem;
+}
+
+.hero .hero-blurb p {
+    font-size: 1.3rem;
+    max-width: 100%;
 }
 
 
@@ -231,7 +249,7 @@ nav .log-out:hover {
 }
 
 .carousel .post-wrapper .post .post-info {
-    height: 130px;
+    height: 80px;
     padding: 0px 5px;
 }
 
@@ -349,13 +367,26 @@ footer .footer-content {
 }
 
 footer .footer-content .footer-section {
-    flex: 1;
+    flex: 2;
     padding: 25px;
+}
+
+footer .footer-content .footer-section.links,
+footer .footer-content .footer-section.contact {
+    flex: 1
 }
 
 footer .footer-content h1,
 footer .footer-content h2 {
     color: white;
+}
+
+footer .footer-content .footer-section:first-of-type {
+    margin-left: 50px;
+}
+
+footer .footer-content .footer-section:last-of-type {
+    margin-right: 50px;
 }
 
 footer .footer-content .about .contact span {
@@ -368,12 +399,12 @@ footer .footer-content .about .social a {
     font-size: 2rem;
     margin-right: 20px;
     margin-top: 20px;
-    transition: all .3s;
+    transition: all .3s ease-in-out;
 }
 
 footer .footer-content .about .social a:hover {
     color: white;
-    transition: all .3s;
+    transition: all .3s ease-in-out;
 }
 
 footer .footer-content .links ul {
@@ -385,6 +416,7 @@ footer .footer-content .links ul a {
     display: block;
     margin-bottom: 10px;
     font-size: 1.2rem;
+    transition: all 0.3s;
 }
 
 footer .footer-content .links ul a:hover {
@@ -399,6 +431,12 @@ footer .footer-content .contact-form .contact-input {
     line-height: 1.5rem;
     color: white;
     padding: 0.7rem 1.2rem;
+    max-width: 400px;
+    border: none;
+}
+
+footer .footer-content .contact-form textarea {
+    height: 160px;
 }
 
 footer .footer-content .contact-form .btn {
@@ -457,5 +495,35 @@ footer .footer-bottom p {
     }
     .showing {
         max-height: 500px;
+    }
+    /***********************************
+            HERO
+    ***********************************/
+    .hero .hero-blurb {
+        width: 100%;
+    }
+    .hero .hero-blurb h1 {
+        font-size: 3rem;
+    }
+    /***********************************
+            CAROUSEL
+    ***********************************/
+    .carousel .next {
+        right: 10px;
+    }
+    .carousel .prev {
+        left: 10px;
+    }
+    /***********************************
+            FOOTER
+    ***********************************/
+    footer .footer-content {
+        flex-direction: column;
+    }
+    footer .footer-content .footer-section:first-of-type {
+        margin-left: 0;
+    }
+    footer .footer-content .footer-section:last-of-type {
+        margin-right: 0;
     }
 }
