@@ -45,6 +45,12 @@ img {
     background: rgb(54, 54, 54)
 }
 
+.btn-big {
+    padding: 0.7rem 1.3rem;
+    line-height: 1.3;
+    margin-top: 20px;
+}
+
 .text-input {
     padding: .7rem 1rem;
     display: block;
@@ -368,6 +374,35 @@ footer .footer-content .about .social a {
 footer .footer-content .about .social a:hover {
     color: white;
     transition: all .3s;
+}
+
+footer .footer-content .links ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+footer .footer-content .links ul a {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+footer .footer-content .links ul a:hover {
+    color: white;
+    margin-left: 15px;
+    transition: all 0.3s;
+}
+
+footer .footer-content .contact-form .contact-input {
+    background: #272727;
+    margin-top: 10px;
+    line-height: 1.5rem;
+    color: white;
+    padding: 0.7rem 1.2rem;
+}
+
+footer .footer-content .contact-form .btn {
+    border: none;
 }
 
 footer .footer-bottom {
