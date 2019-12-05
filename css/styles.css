@@ -1,4 +1,4 @@
-                        * {
+ * {
                             box-sizing: border-box;
                         }
                         
@@ -649,7 +649,7 @@
                             .hero .hero-blurb h1 {
                                 font-size: 2rem;
                             }
-                            .content .main-content.single {
+                            .content .main-content.single {``
                                 padding: 10px 25px;
                             }
                             .content .side-bar.single {

@@ -1,0 +1,40 @@
+.admin-wrapper {
+    height: calc(100vh - 75px);
+    display: flex;
+}
+
+
+/******* Left Sidebar *************/
+
+.admin-wrapper .left-sidebar {
+    flex: 2;
+    height: 100%;
+    background-color: #234a57;
+}
+
+.admin-wrapper .left-sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: aliceblue;
+}
+
+.admin-wrapper .left-sidebar ul li a {
+    padding: 18px;
+    display: block;
+    border-bottom: 1px solid black;
+}
+
+.admin-wrapper .left-sidebar ul li a:hover {
+    background-color: #234457;
+}
+
+
+/*******  .admin-content **********/
+
+.admin-wrapper .admin-content {
+    flex: 8;
+    height: 100%;
+    padding: 40px 100px 100px;
+    overflow-y: scroll;
+}
