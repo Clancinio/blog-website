@@ -1,18 +1,18 @@
 $(document).ready(function() {
-    $('.menu-toggle').on('click', function() {
-        $('nav').toggleClass('showing');
-        $('nav ul').toggleClass('showing');
-    })
+    $(".menu-toggle").on("click", function() {
+        $("nav").toggleClass("showing");
+        $("nav ul").toggleClass("showing");
+    });
 });
 
-// Carousel 
-$('.post-wrapper').slick({
+// Carousel
+$(".post-wrapper").slick({
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 5000,
-    nextArrow: $('.next'),
-    prevArrow: $('.prev'),
+    nextArrow: $(".next"),
+    prevArrow: $(".prev"),
     responsive: [{
             breakpoint: 1024,
             settings: {

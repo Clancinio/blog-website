@@ -82,3 +82,16 @@ table td {
 .publish:hover {
     text-decoration: underline;
 }
+
+
+/*** Add Post ******/
+
+form div {
+    margin-bottom: 20px;
+}
+
+form div label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
