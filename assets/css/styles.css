@@ -120,10 +120,11 @@
                             margin-top: auto;
                             margin-bottom: auto;
                             height: 100%;
+                            font-size: 0.5rem;
                         }
                         
                         nav>ul li {
-                            font-size: 1.2rem;
+                            
                             position: relative;
                             height: 100%;
                             display: flex;
@@ -132,6 +133,7 @@
                         
                         nav>ul li a {
                             transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+                            
                         }
                         
                         .dropdown-menu {

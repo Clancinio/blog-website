@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Adventure Blog</title>
     <!-- Stylesheets-->
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <!-- Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Calistoga|Lato&display=swap" rel="stylesheet">
     <!-- Font Awesome-->
@@ -16,30 +16,8 @@
 </head>
 
 <body>
-    <nav>
-        <div class="logo">
-            <h1 class="logo-text"><span>Adventure</span> Blog</h1>
-        </div>
-        <i class="fa fa-bars menu-toggle"></i>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <!-- <li><a href="#">Sign Up</a></li>
-            <li><a href="#">Login</a></li> -->
-            <li>
-                <a href="#">
-                    <i class="fa fa-user"></i> Dean Clancy
-                    <i class="fa fa-chevron-down"></i>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a class="log-out" href="#">Log Out</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-    <!-- END NAV-->
+    <!-- NAV BAR -->
+    <?php include("app/includes/nav.php"); ?>
 
     <div class="hero">
         <div class="hero-blurb">
@@ -59,7 +37,7 @@
             <i class="fas fa-chevron-right next"></i>
             <div class="post-wrapper">
                 <div class="post">
-                    <img src="images/hiking.jpg" alt="" class="post-image">
+                    <img src="assets/images/hiking.jpg" alt="" class="post-image">
                     <div class="post-info">
                         <h4><a href="single.html">The beautiful sunset trail</a></h4>
                         <i class="far fa-user"></i><span>Dean Clancy</span> &nbsp;
@@ -68,7 +46,7 @@
                     </div>
                 </div>
                 <div class="post">
-                    <img src="images/hiking1.jpg" alt="" class="post-image">
+                    <img src="assets/images/hiking1.jpg" alt="" class="post-image">
                     <div class="post-info">
                         <h4><a href="single.html">The beautiful sunset trail</a></h4>
                         <i class="far fa-user"></i><span>Dean Clancy</span> &nbsp;
@@ -77,7 +55,7 @@
                     </div>
                 </div>
                 <div class="post">
-                    <img src="images/hiking3.jpg" alt="" class="post-image">
+                    <img src="assets/images/hiking3.jpg" alt="" class="post-image">
                     <div class="post-info">
                         <h4><a href="single.html">The beautiful sunset trail</a></h4>
                         <i class="far fa-user"></i><span>Dean Clancy</span> &nbsp;
@@ -86,7 +64,7 @@
                     </div>
                 </div>
                 <div class="post">
-                    <img src="images/hiking1.jpg" alt="" class="post-image">
+                    <img src="assets/images/hiking1.jpg" alt="" class="post-image">
                     <div class="post-info">
                         <h4><a href="single.html">The beautiful sunset trail</a></h4>
                         <i class="far fa-user"></i><span>Dean Clancy</span> &nbsp;
@@ -95,7 +73,7 @@
                     </div>
                 </div>
                 <div class="post">
-                    <img src="images/hiking3.jpg" alt="" class="post-image">
+                    <img src="assets/images/hiking3.jpg" alt="" class="post-image">
                     <div class="post-info">
                         <h4><a href="single.html">The beautiful sunset trail</a></h4>
                         <i class="far fa-user"></i><span>Dean Clancy</span> &nbsp;
@@ -142,7 +120,7 @@
                     </div>
                 </div>
                 <div class="post">
-                    <img src="images/hiking3.jpg" alt="" class="post-image">
+                    <img src="assets/images/hiking3.jpg" alt="" class="post-image">
                     <div class="post-preview">
                         <h1><a href="#">This is the post title</a></h1>
                         <i class="far fa-user"></i><span>Dean Clancy</span> &nbsp;
@@ -239,7 +217,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <!-- Custom Script-->
-    <script src="js/scripts.js"></script>
+    <script src="assets/js/scripts.js"></script>
 </body>
 
 </html>
