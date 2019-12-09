@@ -1,3 +1,4 @@
+<?php include("path.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +18,7 @@
 
 <body>
     <!-- NAV BAR -->
-    <?php include("app/includes/nav.php"); ?>
+    <?php include(ROOT_PATH . "/app/includes/nav.php"); ?>
 
     <div class="auth-content">
         <form action="login.html" method="post">
@@ -35,7 +36,7 @@
             <div class="form-row">
                 <button type="submit" name="login-btn" class="btn btn-big">Login</button>
             </div>
-            <p>Or <a href="register.html">Register</a></p>
+            <p>Or <a href="<?php echo BASE_URL . '/register.php' ?>">Register</a></p>
         </form>
     </div>
 

@@ -120,7 +120,7 @@
                             margin-top: auto;
                             margin-bottom: auto;
                             height: 100%;
-                            font-size: 0.5rem;
+                           
                         }
                         
                         nav>ul li {
@@ -129,6 +129,7 @@
                             height: 100%;
                             display: flex;
                             align-items: center;
+                           
                         }
                         
                         nav>ul li a {
@@ -168,6 +169,7 @@
                             padding: 0 20px;
                             display: flex;
                             align-items: center;
+                            font-size: 1rem;
                         }
 
                         nav ul li ul a {

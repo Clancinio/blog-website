@@ -1,10 +1,10 @@
 <nav>
-    <div class="logo">
+    <a href="<?php echo BASE_URL . '/index.php' ?>" class="logo">
         <h1 class="logo-text"><span>Adventure</span> Blog</h1>
-    </div>
+    </a>
     <i class="fa fa-bars menu-toggle"></i>
     <ul class="nav-links">
-        <li><a href="#">Home</a></li>
+        <li><a href="<?php echo BASE_URL . '/index.php' ?>">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Services</a></li>
         <!-- <li><a href="#">Sign Up</a></li>
