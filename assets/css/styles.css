@@ -5,13 +5,14 @@
                         body {
                             font-family: 'Lato', sans-serif;
                             font-size: 16px;
-                            background-color: rgb(228, 228, 228);
+                            background-color: #f9f9f9;
                         }
                         /** Base Styles **/
                         
                         .wrapper {
                             max-width: 1200px;
                             margin: 0 auto;
+
                         }
                         
                         h1,
@@ -20,6 +21,7 @@
                         h4 {
                             font-family: 'Calistoga', cursive;
                             margin: 10px 0;
+                            color: #2e3842;
                         }
                         
                         a {
@@ -27,21 +29,28 @@
                             color: inherit;
                         }
                         
+                    
                         img {
                             max-width: 100%;
                         }
                         
                         .btn {
-                            background: black;
+                            background: rgb(255, 187, 0);
                             color: white;
+                         
                             padding: 10px;
                             border-radius: 5px;
+                            border: none;
+                            letter-spacing: 2px;
+                            text-transform: uppercase;
+
                         }
                         
-                        .btn:hover {
-                            color: white;
-                            background: rgb(54, 54, 54)
-                        }
+                        .btn:hover,
+                        button {
+                            background: rgb(231, 170, 0);  
+                            cursor: pointer;                     
+                         }
                         
                         .btn-big {
                             padding: 0.7rem 1.3rem;
@@ -83,8 +92,8 @@
                         
                         nav {
                             margin: 0;
-                            background-color: white;
-                            border-bottom: 3px solid black;
+                            background-color: #3a3b3c;
+                            border-bottom: 3px solid white;
                             display: flex;
                             align-items: center;
                             padding-left: 2rem;
@@ -99,6 +108,8 @@
                         
                         .logo-text {
                             margin: 0;
+                            color: white;
+                            letter-spacing: 5px;
                         }
                         
                         nav>ul {
@@ -109,18 +120,21 @@
                             margin-top: auto;
                             margin-bottom: auto;
                             height: 100%;
+                           
                         }
                         
                         nav>ul li {
-                            font-size: 1.2rem;
+                            
                             position: relative;
                             height: 100%;
                             display: flex;
                             align-items: center;
+                           
                         }
                         
                         nav>ul li a {
                             transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+                            
                         }
                         
                         .dropdown-menu {
@@ -149,12 +163,17 @@
                         
                         nav ul li a {
                             text-decoration: none;
-                            color: gray;
+                            color: white;
                             width: 100%;
                             height: 100%;
                             padding: 0 20px;
                             display: flex;
                             align-items: center;
+                            font-size: 1rem;
+                        }
+
+                        nav ul li ul a {
+                            color: blue;
                         }
                         
                         nav ul i {
@@ -271,6 +290,8 @@
                         
                         .carousel .post-wrapper .post i {
                             margin: 0 5px;
+                           
+                            
                         }
                         /***** CONTENT *********/
                         
@@ -374,7 +395,7 @@
                             margin-top: 0;
                             padding: 0px;
                             list-style: none;
-                            border-top: rgba(124, 124, 124, 0.267) 1px solid;
+                            border-top: rgba(46, 40, 40, 0.267) 1px solid;
                         }
                         
                         .content .side-bar .section.topics ul li a {
@@ -398,6 +419,7 @@
                             padding: 20px;
                             background: white;
                             border-radius: 5px;
+                            border: lightgray 1px solid;
                         }
                         
                         .auth-content form .form-title {
@@ -425,7 +447,7 @@
 ***********************************/
                         
                         footer {
-                            background-color: #303036;
+                            background-color: #3a3a3c;
                             color: #d3d3d3;
                         }
                         
@@ -511,13 +533,18 @@
                         }
                         
                         footer .footer-bottom {
-                            background-color: #343a40;
+                            background-color: #323233;
                             text-align: center;
                         }
                         
                         footer .footer-bottom p {
                             margin: 0;
                             padding: 20px;
+                        }
+
+                        .post i {
+                            padding-right: 3px;
+                            color: rgb(231, 170, 0);
                         }
                         /***********************************
             Media Queries

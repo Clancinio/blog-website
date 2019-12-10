@@ -1,3 +1,4 @@
+<?php include("path.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,8 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Register</title>
     <!-- Stylesheets-->
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <!-- Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Calistoga|Lato&display=swap" rel="stylesheet">
     <!-- Font Awesome-->
@@ -16,30 +17,8 @@
 </head>
 
 <body>
-    <nav>
-        <div class="logo">
-            <h1 class="logo-text"><span>Adventure</span> Blog</h1>
-        </div>
-        <i class="fa fa-bars menu-toggle"></i>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <!-- <li><a href="#">Sign Up</a></li>
-            <li><a href="#">Login</a></li> -->
-            <li>
-                <a href="#">
-                    <i class="fa fa-user"></i> Dean Clancy
-                    <i class="fa fa-chevron-down"></i>
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a class="log-out" href="#">Log Out</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-    <!-- END NAV-->
+    <!-- NAV BAR -->
+    <?php include(ROOT_PATH . "/app/includes/nav.php"); ?>
 
     <div class="auth-content">
         <form action="register.html" method="post">
@@ -67,7 +46,7 @@
             <div class="form-row">
                 <button type="submit" name="register-btn" class="btn btn-big">Register</button>
             </div>
-            <p>Or <a href="login.html">Sign In</a></p>
+            <p>Or <a href="<?php echo BASE_URL . '/login.php' ?>">Sign In</a></p>
         </form>
     </div>
 
@@ -77,7 +56,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
     <!-- Custom Script-->
-    <script src="js/scripts.js"></script>
+    <script src="assets/js/scripts.js"></script>
 </body>
 
 </html>
