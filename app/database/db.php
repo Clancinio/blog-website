@@ -71,11 +71,32 @@ function selectOne($table, $conditions) // selects all records from a specified 
     return $records;
 }
 
+function create($table, $data)
+{
+    global $conn;
+    // $sql = "INSERT INTO users SET username = ?, admin = ?, email = ?, password = ?";
+    $sql = "INSERT INTO $table SET";
 
-$conditions = [
-    'admin' => 1,
-    'username' => 'beano'
+    $i = 0;
+    foreach ($data as $key => $value) {
+        if ($i == 0) {
+            $sql = $sql . " $key = ?";
+        } else {
+            $sql = $sql . ", $key = ?";
+        }
+        $i++;
+    }
+    $statement = executeQuery($sql, $data);
+    $id = $statement->insert_id;
+    return $id;
+}
+
+$data = [
+    'username' => 'Alfonzo',
+    'admin' => 0,
+    'email' => 'alf@mail.com',
+    'password' => '123456'
 ];
 
-$users = selectOne('users', $conditions);
-displayData($users);
+$id = create('users', $data);
+displayData($id);
