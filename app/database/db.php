@@ -10,6 +10,17 @@ function displayData($values) // to be deleted
     die();
 }
 
+function executeQuery($sql, $data)
+{
+    global $conn;
+    $statement = $conn->prepare($sql);
+    $values = array_values($data);
+    $types = str_repeat('s', count($values));
+    $statement->bind_param($types, ...$values);
+    $statement->execute();
+    return $statement;
+}
+
 function selectAll($table, $conditions = []) // selects all records from a specified table
 {
     global  $conn;
@@ -33,21 +44,38 @@ function selectAll($table, $conditions = []) // selects all records from a speci
             $i++;
         }
 
-        $statement = $conn->prepare($sql);
-        $values = array_values($conditions);
-        $types = str_repeat('s', count($value));
-        $statement->bind_param($types, ...$values);
-        $statement->execute();
+        $statement = executeQuery($sql, $conditions);
         $records = $statement->get_result()->fetch_all(MYSQLI_ASSOC);
         return $records;
     }
 }
 
+function selectOne($table, $conditions) // selects all records from a specified table
+{
+    global  $conn;
+    $sql = "SELECT * FROM $table";
+
+    $i = 0;
+    foreach ($conditions as $key => $value) {
+        if ($i == 0) {
+            $sql = $sql . " WHERE $key = ?";
+        } else {
+            $sql = $sql . " AND $key = ?";
+        }
+        $i++;
+    }
+
+    $sql = $sql . " LIMIT 1";
+    $statement = executeQuery($sql, $conditions);
+    $records = $statement->get_result()->fetch_assoc();
+    return $records;
+}
+
+
 $conditions = [
-    //key     value
     'admin' => 1,
     'username' => 'beano'
 ];
 
-$users = selectAll('users', $conditions);
+$users = selectOne('users', $conditions);
 displayData($users);
