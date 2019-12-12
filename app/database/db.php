@@ -91,12 +91,38 @@ function create($table, $data)
     return $id;
 }
 
-$data = [
-    'username' => 'Alfonzo',
-    'admin' => 0,
-    'email' => 'alf@mail.com',
-    'password' => '123456'
-];
+function update($table, $id, $data)
+{
+    global $conn;
+    // $sql = "UPDATE users SET username = ?, admin = ?, email = ?, password = ? WHERE id = ?";
+    $sql = "UPDATE $table SET";
 
-$id = create('users', $data);
+    $i = 0;
+    foreach ($data as $key => $value) {
+        if ($i == 0) {
+            $sql = $sql . " $key = ?";
+        } else {
+            $sql = $sql . ", $key = ?";
+        }
+        $i++;
+    }
+
+    $sql = $sql . " WHERE id = ?";
+    $data['id'] = $id; // adds another key pair to the data array
+    $statement = executeQuery($sql, $data);
+    return $statement->affected_rows;
+}
+
+function delete($table, $id)
+{
+    global $conn;
+    // $sql = "DELETE FROM usere WHERE id = ?";
+    $sql = "DELETE FROM $table WHERE id = ?";
+
+    $statement = executeQuery($sql, ['id' => $id]);
+    return $statement->affected_rows;
+}
+
+
+$id = delete('users', 2);
 displayData($id);
