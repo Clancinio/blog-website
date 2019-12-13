@@ -122,7 +122,3 @@ function delete($table, $id)
     $statement = executeQuery($sql, ['id' => $id]);
     return $statement->affected_rows;
 }
-
-
-$id = delete('users', 2);
-displayData($id);
