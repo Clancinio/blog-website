@@ -1,4 +1,6 @@
 <?php include("path.php"); ?>
+<?php include(ROOT_PATH . "/app/controllers/users.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +23,7 @@
     <?php include(ROOT_PATH . "/app/includes/nav.php"); ?>
 
     <div class="auth-content">
-        <form action="register.html" method="post">
+        <form action="register.php" method="post">
             <h2 class="form-title">Register</h2>
 
             <!-- <div class="msg success error">
