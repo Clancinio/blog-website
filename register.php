@@ -26,24 +26,23 @@
         <form action="register.php" method="post">
             <h2 class="form-title">Register</h2>
 
-            <!-- <div class="msg success error">
-                <li>Username required</li>
-            </div> -->
+            <?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
+
             <div class="form-row">
                 <label for="username">Username</label>
-                <input type="text" name="username" class="text-input">
+                <input type="text" name="username" value="<?php echo $username ?>" class="text-input">
             </div>
             <div class="form-row">
                 <label for="email">Email</label>
-                <input type="email" name="email" class="text-input">
+                <input type="email" name="email" value="<?php echo $email ?>" class="text-input">
             </div>
             <div class="form-row">
                 <label for="username">Password</label>
-                <input type="password" name="password" class="text-input">
+                <input type="password" name="password" value="<?php echo $password ?>" class="text-input">
             </div>
             <div class="form-row">
                 <label for="username">Password Confirmation</label>
-                <input type="password" name="password-conf" class="text-input">
+                <input type="password" name="password-conf" value="<?php echo $passwordConf ?>" class="text-input">
             </div>
             <div class="form-row">
                 <button type="submit" name="register-btn" class="btn btn-big">Register</button>
