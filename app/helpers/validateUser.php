@@ -2,6 +2,7 @@
 
 function validateUser($user)
 {
+
     // FORM VALIDATION
     $errors = array();
 
@@ -19,6 +20,12 @@ function validateUser($user)
 
     if ($user['password-conf'] !== $user['password']) {
         array_push($errors, "Passwords do not match");
+    }
+
+    // Check if user already exists in the DB
+    $existingUser = selectOne('users', ['email' => $user['email']]);
+    if (isset($existingUser)) {
+        array_push($errors, "Email already exists");
     }
     return $errors;
 }

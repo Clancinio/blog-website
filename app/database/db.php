@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require("connect.php");
 
 function displayData($values) // to be deleted
