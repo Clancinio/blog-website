@@ -25,7 +25,17 @@ if (isset($_POST["register-btn"])) {
         $user_id = create('users', $_POST);
         $user = selectOne('users', ['id' => $user_id]);
 
-        displayData($user);
+        // Log user in
+        $_SESSION['id'] = $user['id'];
+        $_SESSION['username'] = $user['username'];
+        $_SESSION['admin'] = $user['admin'];
+        $_SESSION['id'] = $user['id'];
+        $_SESSION['id'] = $user['id'];
+        $_SESSION['message'] = "Welcome! You are now logged in.";
+        $_SESSION['type'] = "succes";
+        // Redirect user to the index.php page
+        header("location:" . BASE_URL . "/index.php");
+        exit();
     } else {
 
         $username = $_POST['username'];
