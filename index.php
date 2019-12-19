@@ -21,6 +21,7 @@
 <body>
     <!-- NAV BAR -->
     <?php include(ROOT_PATH . "/app/includes/nav.php"); ?>
+    <?php include(ROOT_PATH . "/app/includes/messages.php"); ?>
 
     <div class="hero">
         <div class="hero-blurb">
