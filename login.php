@@ -1,4 +1,6 @@
 <?php include("path.php"); ?>
+<?php include(ROOT_PATH . "/app/controllers/users.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Register</title>
+    <title>Login</title>
     <!-- Stylesheets-->
     <link rel="stylesheet" href="assets/css/normalize.css">
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -21,16 +23,18 @@
     <?php include(ROOT_PATH . "/app/includes/nav.php"); ?>
 
     <div class="auth-content">
-        <form action="login.html" method="post">
+        <form action="login.php" method="post">
             <h2 class="form-title">Login</h2>
+
+            <?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
 
             <div class="form-row">
                 <label for="username">Username</label>
-                <input type="text" name="username" class="text-input">
+                <input type="text" name="username" value="<?php echo $username ?>" class="text-input">
             </div>
             <div class="form-row">
                 <label for="username">Password</label>
-                <input type="password" name="password" class="text-input">
+                <input type="password" name="password" value="<?php echo $password ?>" class="text-input">
             </div>
 
             <div class="form-row">
