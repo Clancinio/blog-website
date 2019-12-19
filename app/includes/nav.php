@@ -21,7 +21,7 @@
                         <li><a href="<?php echo BASE_URL . '/admin/dashboard.php' ?>">Dashboard</a></li>
                     <?php endif; ?>
 
-                    <li><a class="log-out" href="#">Log Out</a></li>
+                    <li><a class="log-out" href="<?php echo BASE_URL . '/logout.php' ?>">Log Out</a></li>
                 </ul>
             </li>
         <?php else : ?>
