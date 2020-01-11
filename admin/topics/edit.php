@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin Section - Add Topic</title>
+    <title>Admin Section - Edit Topic</title>
     <!-- Stylesheets-->
     <link rel="stylesheet" href="../../assets/css/normalize.css">
     <link rel="stylesheet" href="../../assets/css/styles.css">
@@ -39,7 +39,7 @@
             </div>
 
             <div class="content">
-                <h2 class="page-title">Add Topic</h2>
+                <h2 class="page-title">Edit Topic</h2>
 
                 <form action="create.php" method="POST">
                     <div class="form-row">
@@ -51,7 +51,7 @@
                         <textarea name="description" id="body"></textarea>
                     </div>
                     <div>
-                        <button type="submit" name="add-topic" lass="btn btn-big">Add Topic</button>
+                        <button type="submit" name="edit-topic" lass="btn btn-big">Update Topic</button>
                     </div>
                 </form>
             </div>
