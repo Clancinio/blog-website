@@ -4,6 +4,10 @@ include(ROOT_PATH . "/app/database/db.php");
 
 $table = 'topics';
 
+$id = '';
+$name = '';
+$description = '';
+
 $topics = selectAll($table);
 
 if (isset($_POST["add-topic"])) {
@@ -13,4 +17,12 @@ if (isset($_POST["add-topic"])) {
     $_SESSION['type'] = 'success';
     header('location: ' . BASE_URL . '/admin/topics/index.php');
     exit();
+}
+
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $topics = selectOne($table, ['id' => $id]);
+    $id = $topics['id'];
+    $name = $topics['name'];
+    $description = $topics['description'];
 }

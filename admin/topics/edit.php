@@ -41,14 +41,14 @@
             <div class="content">
                 <h2 class="page-title">Edit Topic</h2>
 
-                <form action="create.php" method="POST">
+                <form action="edit.php" method="POST">
                     <div class="form-row">
                         <label for="">Name</label>
-                        <input type="text" name="name" class="text-input">
+                        <input type="text" name="name" value="<?php echo $name; ?>" class="text-input">
                     </div>
                     <div class="form-row">
                         <label for="">Description</label>
-                        <textarea name="description" id="body"></textarea>
+                        <textarea name="description" id="body"><?php echo $description; ?></textarea>
                     </div>
                     <div>
                         <button type="submit" name="edit-topic" lass="btn btn-big">Update Topic</button>
