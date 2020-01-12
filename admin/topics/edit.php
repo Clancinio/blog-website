@@ -42,6 +42,9 @@
                 <h2 class="page-title">Edit Topic</h2>
 
                 <form action="edit.php" method="POST">
+
+                    <input type="hidden" name="id" value="<?php echo $id; ?>">
+
                     <div class="form-row">
                         <label for="">Name</label>
                         <input type="text" name="name" value="<?php echo $name; ?>" class="text-input">

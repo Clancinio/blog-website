@@ -26,3 +26,14 @@ if (isset($_GET['id'])) {
     $name = $topics['name'];
     $description = $topics['description'];
 }
+
+if (isset($_POST['edit-topic'])) {
+    $id = $_POST['id'];
+    unset($_POST['edit-topic'], $_POST['id']);
+    $topic_id = update($table, $id, $_POST);
+    // Display message 
+    $_SESSION['message'] = 'Topic updated successfully!';
+    $_SESSION['type'] = 'success';
+    header('location: ' . BASE_URL . '/admin/topics/index.php');
+    exit();
+}
