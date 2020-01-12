@@ -54,7 +54,7 @@
                         <textarea name="description" id="body"><?php echo $description; ?></textarea>
                     </div>
                     <div>
-                        <button type="submit" name="edit-topic" lass="btn btn-big">Update Topic</button>
+                        <button type="submit" name="edit-topic" class="btn btn-big">Update Topic</button>
                     </div>
                 </form>
             </div>

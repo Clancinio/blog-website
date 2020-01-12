@@ -8,6 +8,7 @@ $id = '';
 $name = '';
 $description = '';
 
+// All topics are stores in this variable
 $topics = selectAll($table);
 
 if (isset($_POST["add-topic"])) {
@@ -25,6 +26,16 @@ if (isset($_GET['id'])) {
     $id = $topics['id'];
     $name = $topics['name'];
     $description = $topics['description'];
+}
+
+if (isset($_GET['del_id'])) {
+    $id = $_GET['del_id'];
+    $count = delete($table, $id);
+    // Display message 
+    $_SESSION['message'] = 'Topic deleted successfully!';
+    $_SESSION['type'] = 'success';
+    header('location: ' . BASE_URL . '/admin/topics/index.php');
+    exit();
 }
 
 if (isset($_POST['edit-topic'])) {

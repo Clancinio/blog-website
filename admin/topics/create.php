@@ -51,7 +51,7 @@
                         <textarea name="description" id="body"></textarea>
                     </div>
                     <div>
-                        <button type="submit" name="add-topic" lass="btn btn-big">Add Topic</button>
+                        <button type="submit" name="add-topic" class="btn btn-big">Add Topic</button>
                     </div>
                 </form>
             </div>
