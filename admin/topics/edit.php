@@ -40,6 +40,7 @@
 
             <div class="content">
                 <h2 class="page-title">Edit Topic</h2>
+                <?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
 
                 <form action="edit.php" method="POST">
 
