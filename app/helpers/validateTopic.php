@@ -12,7 +12,7 @@ function validateTopic($topic)
 
     // Check if topic already exists in the DB
     $existingTopic = selectOne('topics', ['name' => $topic['name']]);
-    if (isset($existingTopic)) {
+    if ($existingTopic) {
         array_push($errors, "Topic already exists");
     }
     return $errors;

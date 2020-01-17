@@ -1,4 +1,6 @@
 <?php include("../../path.php") ?>
+<?php include(ROOT_PATH . "/app/controllers/posts.php"); ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,22 +49,20 @@
                         <th colspan="3">Action</th>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>This is the first post</td>
-                            <td>Deano</td>
-                            <td><a href="" class="edit">edit</a></td>
-                            <td><a href="" class="delete">delete</a></td>
-                            <td><a href="" class="publish">publish</a></td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>This is the second post</td>
-                            <td>ShannaBanna</td>
-                            <td><a href="" class="edit">edit</a></td>
-                            <td><a href="" class="delete">delete</a></td>
-                            <td><a href="" class="publish">publish</a></td>
-                        </tr>
+                        <?php foreach ($posts as $key => $post) : ?>
+                            <tr>
+                                <td><?php echo $key + 1; ?></td>
+                                <td><?php echo $post['title']; ?></td>
+                                <td>Deano</td>
+                                <td><a href="" class="edit">edit</a></td>
+                                <td><a href="" class="delete">delete</a></td>
+                                <?php if ($post["published"]) : ?>
+                                    <td><a href="" class="unpublish">unpublish</a></td>
+                                <?php else : ?>
+                                    <td><a href="" class="publish">publish</a></td>
+                                <?php endif; ?>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>

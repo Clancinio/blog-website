@@ -1,4 +1,6 @@
 <?php include("../../path.php") ?>
+<?php include(ROOT_PATH . "/app/controllers/posts.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,7 +40,7 @@
             <div class="content">
                 <h2 class="page-title">Create Post</h2>
 
-                <form action="create.html" method="POST">
+                <form action="create.php" method="POST">
                     <div class="form-row">
                         <label for="">Title</label>
                         <input type="text" name="title" class="text-input">
@@ -53,15 +55,14 @@
                     </div>
                     <div class="form-row">
                         <label for="">Topic</label>
-                        <select name="topic" class="text-input">
-                            <option value="Day Hikes">Day Hikes</option>
-                            <option value="Muli-day Hikes">Muli-day Hikes</option>
-                            <option value="Snow Shoing">Snow Shoing</option>
-                            <option value="Back country camping">Back country camping</option>
+                        <select name="topic_id" class="text-input">
+                            <?php foreach ($topics as $key => $topic) : ?>
+                                <option value="<?php echo $topic['id']; ?>"><?php echo $topic['name']; ?></option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
                     <div>
-                        <button class="btn btn-big">Post</button>
+                        <button name="add-post" class="btn btn-big">Post</button>
                     </div>
                 </form>
             </div>
@@ -78,7 +79,7 @@
         <script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script>
 
         <!-- Custom Script-->
-        <script src="../../js/editor.js"></script>
+        <script src="../../assets/js/editor.js"></script>
 </body>
 
 </html>
