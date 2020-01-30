@@ -41,6 +41,9 @@
             <div class="content">
                 <h2 class="page-title">Manage Posts</h2>
 
+                <!-- Display messages -->
+                <?php include(ROOT_PATH . "/app/includes/messages.php"); ?>
+
                 <table>
                     <thead>
                         <th>SN</th>
