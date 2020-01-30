@@ -4,18 +4,33 @@ include(ROOT_PATH . "/app/helpers/validatePost.php");
 
 $table = 'posts';
 
-// Query the topics table to populate the topics dropdown
-$topics = selectAll('topics');
 // Query the posts table to populate the manage posts table
 $posts = selectAll($table);
+$topics = selectAll('topics');
 
+// Array to hold any errors
 $errors = array();
 
+$title = "";
+$body = "";
+$topic_id = "";
+
 if (isset($_POST["add-post"])) {
-    unset($_POST["add-post"], $_POST['topic_id']);
-    $_POST["user_id"] = 1;
-    $_POST["published"] = 1;
+    $errors = validatePost($_POST);
+
+    // Count errors - if none then create post
+    if (count($errors) == 0) {
+        unset($_POST['add-post'], $_POST['topic_id']);
+        $_POST["user_id"] = 1;
+        $_POST["published"] = 1;
 
     $post_id = create($table, $_POST);
     header('location: ' . BASE_URL . '/admin/posts/index.php');
+    } else {
+        // These variables are used to keep the form filled out
+        // so the user doesn't have to re-type
+        $title = $_POST['title'];
+        $body = $_POST['body'];
+        $topic_id = $_POST['topic_id'];
+    }
 }

@@ -17,7 +17,7 @@ $topics = selectAll($table);
 if (isset($_POST["add-topic"])) {
     $errors = validateTopic($_POST);
 
-    // Count errors
+    // Count errors - if none then create topic
     if (count($errors) == 0) {
         unset($_POST["add-topic"]);
         $topic_id = create('topics', $_POST);

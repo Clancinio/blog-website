@@ -40,30 +40,38 @@
             <div class="content">
                 <h2 class="page-title">Create Post</h2>
 
+                <?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
+
+                <!--Form -->
                 <form action="create.php" method="POST">
                     <div class="form-row">
                         <label for="">Title</label>
-                        <input type="text" name="title" class="text-input">
+                        <input type="text" name="title" value="<?php echo $title ?>" class="text-input">
                     </div>
                     <div class="form-row">
                         <label for="">Body</label>
-                        <textarea name="body" id="body"></textarea>
+                        <textarea name="body" id="body"><?php echo $body ?></textarea>
                     </div>
                     <div class="form-row">
                         <label for="">Image</label>
                         <input type="file" name="image" class="text-input">
                     </div>
                     <div class="form-row">
-                        <label for="">Topic</label>
-                        <select name="topic_id" class="text-input">
-                            <?php foreach ($topics as $key => $topic) : ?>
-                                <option value="<?php echo $topic['id']; ?>"><?php echo $topic['name']; ?></option>
-                            <?php endforeach; ?>
+                        <label>Topic</label>
+                        <select name="topic_id" id="topic_id" class="text-input">
+                            <option value="">Select</option>
+                            <?php foreach ($topics as $key => $topic): ?>
+                                <?php if (!empty($topic_id) && $topic_id == $topic['id']): ?>
+                                    <option selected value="<?php echo $topic['id'] ?>"><?php echo $topic['name'] ?></option>
+                                <?php else: ?>
+                                    <option value="<?php echo $topic['id'] ?>"><?php echo $topic['name'] ?></option>
+                                <?php endif; ?>
+                            <?php endforeach; ?> 
                         </select>
                     </div>
                     <div>
-                        <button name="add-post" class="btn btn-big">Post</button>
-                    </div>
+                        <button type="submit" name="add-post" class="btn btn-big">Post</button>
+                    </div> 
                 </form>
             </div>
             <!-- // Admin Content-->
