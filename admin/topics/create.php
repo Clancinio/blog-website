@@ -1,5 +1,6 @@
-<?php include("../../path.php") ?>
+<?php include("../../path.php"); ?>
 <?php include(ROOT_PATH . "/app/controllers/topics.php"); ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,18 +41,19 @@
 
             <div class="content">
                 <h2 class="page-title">Add Topic</h2>
+                <?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
 
                 <form action="create.php" method="POST">
                     <div class="form-row">
                         <label for="">Name</label>
-                        <input type="text" name="name" class="text-input">
+                        <input type="text" name="name" value="<?php echo $name ?>" class="text-input">
                     </div>
                     <div class="form-row">
                         <label for="">Description</label>
-                        <textarea name="description" id="body"></textarea>
+                        <textarea name="description" value="<?php echo $description ?>" id="body"></textarea>
                     </div>
                     <div>
-                        <button type="submit" name="add-topic" lass="btn btn-big">Add Topic</button>
+                        <button type="submit" name="add-topic" class="btn btn-big">Add Topic</button>
                     </div>
                 </form>
             </div>
