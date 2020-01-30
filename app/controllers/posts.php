@@ -22,9 +22,14 @@ if (isset($_POST["add-post"])) {
     if (count($errors) == 0) {
         unset($_POST['add-post'], $_POST['topic_id']);
         $_POST["user_id"] = 1;
-        $_POST["published"] = 1;
+        $_POST["published"] = isset($_POST['published']) ? 1 : 0;
+        // Remove the html tags 
+        $_POST['body'] = htmlentities($_POST['body']);
 
     $post_id = create($table, $_POST);
+    // Set some messages
+    $_SESSION['message'] = "Post created succesfully";
+    $_SESSION['type'] = "success";
     header('location: ' . BASE_URL . '/admin/posts/index.php');
     } else {
         // These variables are used to keep the form filled out
