@@ -43,7 +43,7 @@
                 <?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
 
                 <!--Form -->
-                <form action="create.php" method="POST">
+                <form action="create.php" method="POST" enctype="multipart/form-data">
                     <div class="form-row">
                         <label for="">Title</label>
                         <input type="text" name="title" value="<?php echo $title ?>" class="text-input">
@@ -70,10 +70,17 @@
                         </select>
                     </div>
                     <div>
-                         <label>
-                            <input type="checkbox" name="published">
+                        <?php if (empty($published)): ?>
+                            <label>
+                                <input type="checkbox" name="published">
                                 Publish
-                        </label>
+                            </label>
+                        <?php else: ?>
+                            <label>
+                                <input type="checkbox" name="published" checked>
+                                Publish
+                            </label>
+                        <?php endif; ?>
                     </div>
                     <div>
                         <button type="submit" name="add-post" class="btn btn-big">Post</button>
