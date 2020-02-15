@@ -1,4 +1,6 @@
 <?php include("../../path.php") ?>
+<?php include(ROOT_PATH . "/app/controllers/posts.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,30 +40,50 @@
             <div class="content">
                 <h2 class="page-title">Edit Post</h2>
 
-                <form action="create.html" method="POST">
-                    <div class="form-row">
+                <form action="edit.php" method="POST" enctype="multipart/form-data">
+                <!-- Hidden input field -->
+                <input type="hidden" name="id" value="<?php echo $id ?>">
+
+                <div class="form-row">
                         <label for="">Title</label>
-                        <input type="text" name="title" class="text-input">
+                        <input type="text" name="title" value="<?php echo $title ?>" class="text-input">
                     </div>
                     <div class="form-row">
                         <label for="">Body</label>
-                        <textarea name="body" id="body"></textarea>
+                        <textarea name="body" id="body"><?php echo $body ?></textarea>
                     </div>
                     <div class="form-row">
                         <label for="">Image</label>
                         <input type="file" name="image" class="text-input">
                     </div>
                     <div class="form-row">
-                        <label for="">Topic</label>
-                        <select name="topic" class="text-input">
-                            <option value="Day Hikes">Day Hikes</option>
-                            <option value="Muli-day Hikes">Muli-day Hikes</option>
-                            <option value="Snow Shoing">Snow Shoing</option>
-                            <option value="Back country camping">Back country camping</option>
+                        <label>Topic</label>
+                        <select name="topic_id" id="topic_id" class="text-input">
+                            <option value="">Select</option>
+                            <?php foreach ($topics as $key => $topic): ?>
+                                <?php if (!empty($topic_id) && $topic_id == $topic['id']): ?>
+                                    <option selected value="<?php echo $topic['id'] ?>"><?php echo $topic['name'] ?></option>
+                                <?php else: ?>
+                                    <option value="<?php echo $topic['id'] ?>"><?php echo $topic['name'] ?></option>
+                                <?php endif; ?>
+                            <?php endforeach; ?> 
                         </select>
                     </div>
                     <div>
-                        <button name="edit-post" class="btn btn-big">Update Post</button>
+                        <?php if (empty($published) && $published == 0): ?>
+                            <label>
+                                <input type="checkbox" name="published">
+                                Publish
+                            </label>
+                        <?php else: ?>
+                            <label>
+                                <input type="checkbox" name="published" checked>
+                                Publish
+                            </label>
+                        <?php endif; ?>
+                    </div>
+                    <div>
+                        <button type="submit" name="update-post" class="btn btn-big">Update Post</button>
                     </div>
                 </form>
             </div>
@@ -78,7 +100,7 @@
         <script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script>
 
         <!-- Custom Script-->
-        <script src="../../js/editor.js"></script>
+        <script src="../../assets/js/editor.js"></script>
 </body>
 
 </html>
