@@ -41,10 +41,10 @@
                 <h2 class="page-title">Edit Post</h2>
 
                 <form action="edit.php" method="POST" enctype="multipart/form-data">
-                <!-- Hidden input field -->
-                <input type="hidden" name="id" value="<?php echo $id ?>">
+                    <!-- Hidden input field -->
+                    <input type="hidden" name="id" value="<?php echo $id ?>" class="text-input">
 
-                <div class="form-row">
+                    <div class="form-row">
                         <label for="">Title</label>
                         <input type="text" name="title" value="<?php echo $title ?>" class="text-input">
                     </div>
@@ -60,22 +60,22 @@
                         <label>Topic</label>
                         <select name="topic_id" id="topic_id" class="text-input">
                             <option value="">Select</option>
-                            <?php foreach ($topics as $key => $topic): ?>
-                                <?php if (!empty($topic_id) && $topic_id == $topic['id']): ?>
+                            <?php foreach ($topics as $key => $topic) : ?>
+                                <?php if (!empty($topic_id) && $topic_id == $topic['id']) : ?>
                                     <option selected value="<?php echo $topic['id'] ?>"><?php echo $topic['name'] ?></option>
-                                <?php else: ?>
+                                <?php else : ?>
                                     <option value="<?php echo $topic['id'] ?>"><?php echo $topic['name'] ?></option>
                                 <?php endif; ?>
-                            <?php endforeach; ?> 
+                            <?php endforeach; ?>
                         </select>
                     </div>
                     <div>
-                        <?php if (empty($published) && $published == 0): ?>
+                        <?php if (empty($published) && $published == 0) : ?>
                             <label>
                                 <input type="checkbox" name="published">
                                 Publish
                             </label>
-                        <?php else: ?>
+                        <?php else : ?>
                             <label>
                                 <input type="checkbox" name="published" checked>
                                 Publish

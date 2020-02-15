@@ -60,22 +60,22 @@
                         <label>Topic</label>
                         <select name="topic_id" id="topic_id" class="text-input">
                             <option value="">Select</option>
-                            <?php foreach ($topics as $key => $topic): ?>
-                                <?php if (!empty($topic_id) && $topic_id == $topic['id']): ?>
+                            <?php foreach ($topics as $key => $topic) : ?>
+                                <?php if (!empty($topic_id) && $topic_id == $topic['id']) : ?>
                                     <option selected value="<?php echo $topic['id'] ?>"><?php echo $topic['name'] ?></option>
-                                <?php else: ?>
+                                <?php else : ?>
                                     <option value="<?php echo $topic['id'] ?>"><?php echo $topic['name'] ?></option>
                                 <?php endif; ?>
-                            <?php endforeach; ?> 
+                            <?php endforeach; ?>
                         </select>
                     </div>
                     <div>
-                        <?php if (empty($published)): ?>
+                        <?php if (empty($published)) : ?>
                             <label>
                                 <input type="checkbox" name="published">
                                 Publish
                             </label>
-                        <?php else: ?>
+                        <?php else : ?>
                             <label>
                                 <input type="checkbox" name="published" checked>
                                 Publish
@@ -84,7 +84,7 @@
                     </div>
                     <div>
                         <button type="submit" name="add-post" class="btn btn-big">Post</button>
-                    </div> 
+                    </div>
                 </form>
             </div>
             <!-- // Admin Content-->
