@@ -1,4 +1,5 @@
 <?php include("../../path.php") ?>
+<?php include(ROOT_PATH . "/app/controllers/users.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +40,7 @@
             <div class="content">
                 <h2 class="page-title">Add User</h2>
 
-                <form action="create.html" method="POST">
+                <form action="create.php" method="POST">
                     <div class="form-row">
                         <label for="username">Username</label>
                         <input type="text" name="username" class="text-input">
@@ -57,14 +58,13 @@
                         <input type="password" name="password-conf" class="text-input">
                     </div>
                     <div class="form-row">
-                        <label for="">Rule</label>
-                        <select name="rule" class="text-input">
-                            <option value="Author">Author</option>
-                            <option value="Admin">Admin</option>
-                        </select>
+                        <label>
+                            <input type="checkbox" name="admin">
+                            Admin
+                        </label>  
                     </div>
                     <div>
-                        <button class="btn btn-big">Add User</button>
+                        <button class="btn btn-big" name="create-admin">Add User</button>
                     </div>
                 </form>
             </div>
