@@ -3,11 +3,15 @@ _<?php
     include(ROOT_PATH . "/app/database/db.php");
     include(ROOT_PATH . "/app/helpers/validateUser.php");
 
+    $table = 'users';
+    $admin_users = selectAll($table, ["admin" => 1]);
+
     $errors = array();
     $username = "";
     $email = "";
     $password = "";
     $passwordConf = "";
+    $admin = "";
     $table = 'users';
 
     function loginUser($user)
@@ -57,6 +61,7 @@ _<?php
         } else {
 
             $username = $_POST['username'];
+            $admin = isset($_POST['admin']) ? 1 : 0;
             $email = $_POST['email'];
             $password = $_POST['password'];
             $passwordConf = $_POST['password-conf'];
@@ -82,3 +87,14 @@ _<?php
         $username = $_POST['username'];
         $password = $_POST['password'];
     }
+
+if (isset($_GET['delete_id'])){
+    $count = delete($table, $_GET['delete_id']);
+    // Set message
+    $_SESSION['message'] = "Admin user deleted";
+    $_SESSION['type'] = "success";
+    // Redirect user to the dashboard if they are admins
+    header("location:" . BASE_URL . "/admin/users/index.php");
+    exit();
+
+}
